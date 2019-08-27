@@ -11,7 +11,9 @@
 <body>
     <div id="main_container">
         <section id="header"></section>
-        <section id="playlist"></section>
+        <section id="playlist_container">
+
+        </section>
     </div>
     <script src="./scripts/melon.js"></script>
 </body>

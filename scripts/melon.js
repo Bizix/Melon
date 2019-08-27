@@ -15,7 +15,8 @@ function getSomething(xhr) {
     for (var i = 0; i < 100; i++) {
         // Container
         let content_container = document.createElement('div');
-        document.body.appendChild(content_container);
+        let playlist = document.querySelector('#playlist_container');
+        playlist.appendChild(content_container);
 
         // Rank
         let rank = rankAr[i];
