@@ -28,9 +28,7 @@
             </div>
         </section>
         <section id="playlist_container">
-            <div id="playlist">
-                
-            </div>
+            
         </section>
     </div>
     <script src="scripts/melon.js"></script>

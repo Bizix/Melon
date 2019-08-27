@@ -97,13 +97,14 @@ body {
 /* Playlist section */
 
 #playlist_container {
-    /* border: 1px solid red; */
-    /* width: 100%; */
-    height: 100vh;
+    border: 1px solid rgb(254, 60, 65);
+    width: 70%;
+    margin: 10px auto;
+    /* height: 100vh; */
     /* background-color: rgb(211, 211, 211); */
 }
 
-#playlist {
+/* #playlist {
     border: 1px solid rgb(254, 60, 65);
     width: 70%;
     margin: 10px auto;
@@ -113,4 +114,4 @@ body {
     align-items: center;
     font-family: 'Poor Story', cursive;
     font-size: 1.5rem;
-}
+} */

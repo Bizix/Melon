@@ -11,11 +11,12 @@ function getSomething(xhr) {
     let artAr = div.querySelectorAll('.image_typeAll>img');
 
 
-
     for (var i = 0; i < 100; i++) {
         // Container
+        let playlist = document.querySelector('#playlist_container');
         let content_container = document.createElement('div');
-        document.body.appendChild(content_container);
+        content_container.classList.add('playtlis');
+        playlist.appendChild(content_container);
 
         // Rank
         let rank = rankAr[i];
