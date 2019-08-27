@@ -97,21 +97,20 @@ body {
 /* Playlist section */
 
 #playlist_container {
-    border: 1px solid rgb(254, 60, 65);
+    /* border-bottom: 1px solid rgb(254, 60, 65); */
     width: 70%;
     margin: 10px auto;
     /* height: 100vh; */
     /* background-color: rgb(211, 211, 211); */
 }
 
-/* #playlist {
+.playlist {
     border: 1px solid rgb(254, 60, 65);
-    width: 70%;
     margin: 10px auto;
     padding: 10px 0px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-family: 'Poor Story', cursive;
-    font-size: 1.5rem;
-} */
+    font-size: 1rem;
+}

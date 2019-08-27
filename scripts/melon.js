@@ -15,7 +15,7 @@ function getSomething(xhr) {
         // Container
         let playlist = document.querySelector('#playlist_container');
         let content_container = document.createElement('div');
-        content_container.classList.add('playtlis');
+        content_container.classList.add('playlist');
         playlist.appendChild(content_container);
 
         // Rank
@@ -24,6 +24,13 @@ function getSomething(xhr) {
         let rankDiv = document.createElement('div');
         content_container.appendChild(rankDiv);
         rankDiv.appendChild(rank);
+
+        // Album Art
+        let art = artAr[i];
+        div.appendChild(art);
+        let artDiv = document.createElement('div');
+        content_container.appendChild(artDiv);
+        artDiv.appendChild(art);
 
         // // Song Title
         let title = titleAr[i].textContent;
@@ -43,12 +50,6 @@ function getSomething(xhr) {
         albumDiv.textContent = album;
         content_container.appendChild(albumDiv);
 
-        // Album Art
-        let art = artAr[i];
-        div.appendChild(art);
-        let artDiv = document.createElement('div');
-        content_container.appendChild(artDiv);
-        artDiv.appendChild(art);
     }
 }
 
