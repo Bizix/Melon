@@ -29,11 +29,7 @@
         </section>
         <section id="playlist_container">
             <div id="playlist">
-                <div class="rank"></div>
-                <div class="rank_img"></div>
-                <div class="rank01"></div>
-                <div class="rank02"></div>
-                <div class="rank03"></div>
+                
             </div>
         </section>
     </div>
