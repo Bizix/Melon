@@ -10,7 +10,7 @@
 
 <body>
     <div id="main_container">
-        <section id="header">Hello Sean's Branch</section>
+        <section id="header"></section>
         <section id="playlist"></section>
     </div>
     <script src="./scripts/melon.js"></script>
