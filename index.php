@@ -12,26 +12,28 @@
 </head>
 
 <body>
-    <div id="main_container">
-       <section id="header">
+    <div id="main_container" class="dark">
+       <section id="header" class="dark">
             <div class="logo"><img src="images/watermelon_04.png" alt=""></div>
             <div class="genre_container">
-                <div class="genre">Top 100</div>
-                <div class="genre">K-Pop</div>
-                <div class="genre">Rap/Hiphop</div>
-                <div class="genre">R&B</div>
-                <div class="genre">Indie</div>
-                <div class="genre">Rock</div>
-                <div class="genre">Balad</div>
-                <div class="genre">Trot</div>
-                <div class="genre">Blues/Folk</div>
+                <div class="genre dark">Top 100</div>
+                <div class="genre dark">K-Pop</div>
+                <div class="genre dark">Rap/Hiphop</div>
+                <div class="genre dark">R&B</div>
+                <div class="genre dark">Indie</div>
+                <div class="genre dark">Rock</div>
+                <div class="genre dark">Balad</div>
+                <div class="genre dark">Trot</div>
+                <div class="genre dark">Blues/Folk</div>
             </div>
+            <div class="toggle"><input type="checkbox" id="switch" name="switch" autocomplete="off" /><label for="switch">Toggle</label></div>
         </section>
         <section id="playlist_container">
             
         </section>
     </div>
     <script src="scripts/melon.js"></script>
+    <script src="scripts/themeToggle.js"></script>
 </body>
 
 </html>
