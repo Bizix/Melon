@@ -1,3 +1,116 @@
-body{
-    margin:0;
+/* Font options:
+
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Montserrat', sans-serif;
+
+    Hangul 
+    
+
+    font-family: 'Nanum Brush Script', cursive;
+
+    font-family: 'Single Day', cursive;
+
+    font-family: 'Poor Story', cursive;
+
+    font-family: 'Nanum Gothic Coding', monospace;
+
+*/
+
+
+/* Dark mode */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: rgba(58, 58, 58, 0.95); */
+}
+
+
+#header {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    border-bottom: 3px solid rgb(254, 60, 65);
+}
+
+.logo {
+    width: 200px;
+}
+
+.logo img {
+    width: 100%;
+    margin-top: 45px;
+}
+
+.genre_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genre {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comfortaa', cursive;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 1rem;
+    /* color: rgb(240, 240, 240); */
+    cursor: pointer;
+}
+
+/* .genre:hover {
+    color: rgb(0, 210, 2);
+    background-color: rgb(241, 241, 241);
+    border-radius: 50%;
+} */
+
+
+
+/* Light mode */
+
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.genre {
+
+    color: rgb(254, 60, 65);
+
+}
+
+.genre:hover {
+    color: rgb(238, 238, 238);
+    background-color: rgb(254, 60, 65);
+    border-radius: 50%;
+}
+
+
+/* Playlist section */
+
+#playlist_container {
+    /* border-bottom: 1px solid rgb(254, 60, 65); */
+    width: 70%;
+    margin: 10px auto;
+    /* height: 100vh; */
+    /* background-color: rgb(211, 211, 211); */
+}
+
+.playlist {
+    border: 1px solid rgb(254, 60, 65);
+    margin: 10px auto;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Poor Story', cursive;
+    font-size: 1rem;
 }
