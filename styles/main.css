@@ -79,9 +79,9 @@ body {
     font-size: 1rem;
 }
 
-.playlist_header>div {
-    /* border: 1px solid rgb(38, 0, 255); */
-}
+/* .playlist_header>div {
+    border: 1px solid rgb(38, 0, 255);
+} */
 
 .ranking {
     margin-left: 2%;
