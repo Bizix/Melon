@@ -18,7 +18,7 @@
 
 <body>
     <div id="main_container" class="dark">
-       <header id="header" class="dark">
+        <header id="header" class="dark">
             <div class="logo"><img src="images/watermelon_04.png" alt=""></div>
             <div class="genre_container navbar">
                 <div id="top100" class="genre dark list-item" data-filter="DM0000">Top 100</div>
@@ -31,7 +31,8 @@
                 <div id="trot" class="genre dark list-item" data-filter="GN0700">Trot</div>
                 <div id="folk" class="genre dark list-item" data-filter="GN0800">Blues/Folk</div>
             </div>
-            <div class="toggle"><input type="checkbox" id="switch" name="switch" autocomplete="off" /><label for="switch">Toggle</label></div>
+            <div class="toggle"><input type="checkbox" id="switch" name="switch" autocomplete="off" /><label
+                    for="switch">Toggle</label></div>
         </header>
         <section>
             <div class="playlist_header">
@@ -45,7 +46,7 @@
             </div>
         </section>
         <footer class="footer">
-            
+
         </footer>
     </div>
     <script src="scripts/melon.js"></script>
