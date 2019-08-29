@@ -65,13 +65,23 @@ function construct_playlist(xhr) {
         content_container.appendChild(albumDiv);
 
         // Youtube
-        // MOVE TO ON CLICK + NEED TO GET ARTIST AND TITLE
 
-        let youtubeID = getYoutube(title, artist);
-        console.log(youtubeID); // UidhQTm1ulw
-        youtube_box.innerHTML = ' <iframe id="ytplayer" type="text/html" width="896" height="504" src="https://www.youtube.com/embed/' +
-            youtubeID + '"frameborder="0"></iframe>';
+        content_container.addEventListener("click", function (e) {
+            var youtube_box = e.currentTarget.nextElementSibling;
+            if (window.getComputedStyle(youtube_box, null).getPropertyValue("display") === "none") {
+                //console.log(window.getComputedStyle(youtube_box, null).getPropertyValue("display"));
+                youtube_box.style.display = "flex";
+                var youtubeID = getYoutube(title, artist);
+                e.currentTarget.nextElementSibling.innerHTML = ' <iframe id="ytplayer" type="text/html" width="896" height="504" src="https://www.youtube.com/embed/' + youtubeID + '"frameborder="0"></iframe>';
+            } else {
+                youtube_box.style.display = "";
+            }
+
+        });
     }
+}
+function constructYTBox(title, artist) {
+
 }
 
 function getPlaylist(param) {
@@ -85,6 +95,7 @@ function getPlaylist(param) {
     }
     xhr.send();
 }
+
 
 function getYoutube(title, artist) {
     var yxhr = new XMLHttpRequest();
