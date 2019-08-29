@@ -12,6 +12,4 @@ checkbox.addEventListener('change', function () {
             dark[i].classList.remove("dark_active");
         }
     }
-
-
 });

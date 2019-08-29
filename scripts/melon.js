@@ -15,9 +15,13 @@ function construct_playlist(xhr) {
     for (var i = 0; i < rankAr.length; i++) {
         // Container
 
+        let big_container = document.createElement('div');
+        big_container.classList.add('playlist_wrapper');
+        playlist.appendChild(big_container);
+
         let content_container = document.createElement('div');
         content_container.classList.add('playlist', 'dark');
-        playlist.appendChild(content_container);
+        big_container.appendChild(content_container);
 
         // Rank
         let rank = rankAr[i];
@@ -35,29 +39,54 @@ function construct_playlist(xhr) {
         content_container.appendChild(artDiv);
         artDiv.appendChild(art);
 
-        // // Song Title
+        // Song Title
         let title = titleAr[i].textContent;
         let titleDiv = document.createElement('div');
         titleDiv.classList.add('song_title');
         titleDiv.textContent = title;
         content_container.appendChild(titleDiv);
 
-        // // Artist Name
+        // Artist Name
         let artist = artistAr[i].textContent;
         let artistDiv = document.createElement('div');
         artistDiv.classList.add('artist');
         artistDiv.textContent = artist;
         content_container.appendChild(artistDiv);
 
-        // // // Album Name
+        // Album Name
         let album = albumAr[i].textContent;
         let albumDiv = document.createElement('div');
         albumDiv.classList.add('album_name');
         albumDiv.textContent = album;
         content_container.appendChild(albumDiv);
 
+        // Video Player
+        let youtube_box = document.createElement('div');
+        youtube_box.classList.add('youtube_box');
+        //youtube_box.style.display = "none";
+        // youtube_box.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/C8KV0mzqTXY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        big_container.appendChild(youtube_box);
+    }
+
+
+    // Activate Youtube video container
+
+    let playlist_content = document.querySelectorAll(".playlist")
+    let youtube_box = document.querySelectorAll('.youtube_box');
+
+    for (let i = 0; i < playlist_content.length; i++) {
+        playlist_content[i].addEventListener("click", function () {
+            if (window.getComputedStyle(youtube_box[i], null).getPropertyValue("display") === "none") {
+
+                youtube_box[i].style.display = "flex";
+            } else {
+                youtube_box[i].style.display = "";
+            }
+        });
     }
 }
+
+
 
 function getPlaylist(param) {
     var xhr = new XMLHttpRequest();
@@ -100,15 +129,3 @@ function getPlaylist(param) {
         }
     }
 }
-
-// Genre Changing
-
-// document.getElementById("top100").addEventListener("click", function () { getPlaylist(top100); });
-// document.getElementById("kpop").addEventListener("click", getPlaylist(kpop));
-// document.getElementById("rap").addEventListener("click", getPlaylist(rap));
-// document.getElementById("rb").addEventListener("click", getPlaylist(rb));
-// document.getElementById("indie").addEventListener("click", getPlaylist(indie));
-// document.getElementById("rock").addEventListener("click", getPlaylist(rock));
-// document.getElementById("balad").addEventListener("click", getPlaylist(balad));
-// document.getElementById("trot").addEventListener("click", getPlaylist(trot));
-// document.getElementById("folk").addEventListener("click", getPlaylist(folk));

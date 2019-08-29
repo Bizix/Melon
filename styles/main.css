@@ -9,7 +9,6 @@
     font-family: 'Single Day', cursive;
     font-family: 'Poor Story', cursive;
     font-family: 'Nanum Gothic Coding', monospace;
-
 */
 
 body {
@@ -28,6 +27,7 @@ body {
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
+    padding-bottom: 15px;
     border-bottom: 3px solid rgba(0, 210, 2, 0.6);
 }
 
@@ -37,7 +37,7 @@ body {
 
 .logo img {
     width: 200px;
-    margin-top: 45px;
+    margin-top: 40px;
 }
 
 .genre_container {
@@ -99,6 +99,10 @@ body {
     margin-left: 15.5%;
 }
 
+.playlist_wrapper {
+    margin-bottom: 10px;
+}
+
 #playlist_container {
     /* border-bottom: 1px solid rgb(254, 60, 65); */
     width: 70%;
@@ -111,13 +115,14 @@ body {
     background-color: rgba(240, 240, 240, 0.63);
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
     border-radius: 25px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto;
     padding: 15px;
     display: flex;
     justify-content: center;
     /* align-items: center; */
     font-family: 'Nanum Gothic Coding', monospace;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .playlist>div {
@@ -155,9 +160,15 @@ body {
 
 .album_name {
     width: 300px;
-
 }
 
+.youtube_box {
+    border: 1px solid red;
+    display: none;
+    justify-content: center;
+    height: 300px;
+    padding: 20px;
+}
 
 /* Dark mode */
 
