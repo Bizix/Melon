@@ -13,11 +13,19 @@ function construct_playlist(xhr) {
     let playlist = document.querySelector('#playlist_container');
     playlist.innerHTML = "";
     for (var i = 0; i < rankAr.length; i++) {
-        // Container
+        // Container  
+
+        let big_container = document.createElement('div');
+        big_container.classList.add('playlist_wrapper');
+        playlist.appendChild(big_container);
 
         let content_container = document.createElement('div');
         content_container.classList.add('playlist', 'dark');
-        playlist.appendChild(content_container);
+        big_container.appendChild(content_container);
+
+        let youtube_box = document.createElement('div');
+        youtube_box.classList.add('youtube_box');
+        big_container.appendChild(youtube_box);
 
         // Rank
         let rank = rankAr[i];
@@ -35,27 +43,34 @@ function construct_playlist(xhr) {
         content_container.appendChild(artDiv);
         artDiv.appendChild(art);
 
-        // // Song Title
+        // Song Title
         let title = titleAr[i].textContent;
         let titleDiv = document.createElement('div');
         titleDiv.classList.add('song_title');
         titleDiv.textContent = title;
         content_container.appendChild(titleDiv);
 
-        // // Artist Name
+        // Artist Name
         let artist = artistAr[i].textContent;
         let artistDiv = document.createElement('div');
         artistDiv.classList.add('artist');
         artistDiv.textContent = artist;
         content_container.appendChild(artistDiv);
 
-        // // // Album Name
+        // Album Name
         let album = albumAr[i].textContent;
         let albumDiv = document.createElement('div');
         albumDiv.classList.add('album_name');
         albumDiv.textContent = album;
         content_container.appendChild(albumDiv);
 
+        // Youtube
+        // MOVE TO ON CLICK + NEED TO GET ARTIST AND TITLE
+
+        let youtubeID = getYoutube(title, artist);
+        console.log(youtubeID); // UidhQTm1ulw
+        youtube_box.innerHTML = ' <iframe id="ytplayer" type="text/html" width="896" height="504" src="https://www.youtube.com/embed/' +
+            youtubeID + '"frameborder="0"></iframe>';
     }
 }
 
@@ -64,26 +79,30 @@ function getPlaylist(param) {
     var url = 'http://www.melon.com/chart/day/index.htm?classCd=' + param;
     xhr.open('GET', url, true);
     xhr.onreadystatechange = function () {
-        // console.log(xhr);
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            // console.log(xhr.responseText);
             construct_playlist(xhr);
         }
     }
     xhr.send();
 }
 
-// // playlist keys
-
-// var top100 = document.querySelector("#top100").getAttribute("data-filter");
-// var kpop = "GN0200";
-// var rap = "GN0300";
-// var rb = "GN0400";
-// var indie = "GN0500";
-// var rock = "GN0600";
-// var balad = "GN0100";
-// var trot = "GN0700";
-// var folk = "GN0800";
+function getYoutube(title, artist) {
+    var yxhr = new XMLHttpRequest();
+    var key = 'AIzaSyDJG4uwhqh0A4gCLmgQuDhyJM7DK57dbDk';
+    console.log(title);
+    console.log(artist);
+    var video_id
+    var url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + artist + ',' + title + '&key=' + key;
+    yxhr.open('GET', url, false);
+    yxhr.onreadystatechange = function () {
+        if (yxhr.readyState === XMLHttpRequest.DONE && yxhr.status === 200) {
+            let objectYT = JSON.parse(yxhr.responseText);
+            video_id = objectYT.items[0].id.videoId;
+        }
+    }
+    yxhr.send();
+    return video_id;
+}
 
 {
 
@@ -100,15 +119,3 @@ function getPlaylist(param) {
         }
     }
 }
-
-// Genre Changing
-
-// document.getElementById("top100").addEventListener("click", function () { getPlaylist(top100); });
-// document.getElementById("kpop").addEventListener("click", getPlaylist(kpop));
-// document.getElementById("rap").addEventListener("click", getPlaylist(rap));
-// document.getElementById("rb").addEventListener("click", getPlaylist(rb));
-// document.getElementById("indie").addEventListener("click", getPlaylist(indie));
-// document.getElementById("rock").addEventListener("click", getPlaylist(rock));
-// document.getElementById("balad").addEventListener("click", getPlaylist(balad));
-// document.getElementById("trot").addEventListener("click", getPlaylist(trot));
-// document.getElementById("folk").addEventListener("click", getPlaylist(folk));
