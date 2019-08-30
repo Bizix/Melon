@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script|Nanum+Gothic+Coding|Poor+Story|Single+Day&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <title>Melon4Foreigners</title>
 </head>
@@ -39,6 +41,7 @@
                 <div class="song">Song</div>
                 <div class="artist_name">Artist</div>
                 <div class="album">Album</div>
+                <a href="#" class="upA"> <i class="fas fa-angle-up"></i> </a>
             </div>
             <div id="playlist_container">
 

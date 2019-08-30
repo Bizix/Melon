@@ -267,6 +267,14 @@ body {
     100% { -webkit-transform: translateY(-100%); }
 } */
 
+
+.upA{
+    color: black;
+    font-size: 30px;
+    margin-left: 180px;
+    font-weight: 100;
+}
+
 /* Dark mode */
 
 html.dark_active {
