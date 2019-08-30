@@ -67,21 +67,24 @@ function construct_playlist(xhr) {
         // Youtube
 
         content_container.addEventListener("click", function (e) {
+            var clicked_playlist = e.currentTarget;
             var youtube_box = e.currentTarget.nextElementSibling;
             if (window.getComputedStyle(youtube_box, null).getPropertyValue("display") === "none") {
-                //console.log(window.getComputedStyle(youtube_box, null).getPropertyValue("display"));
+                clicked_playlist.classList.add('clicked_playlist');
+                // youtube_box.classList.remove('slide_out');
+                youtube_box.classList.add('slide_in');
                 youtube_box.style.display = "flex";
                 var youtubeID = getYoutube(title, artist);
                 e.currentTarget.nextElementSibling.innerHTML = ' <iframe id="ytplayer" type="text/html" width="896" height="504" src="https://www.youtube.com/embed/' + youtubeID + '"frameborder="0"></iframe>';
             } else {
+                youtube_box.classList.remove('slide_in');
+                // youtube_box.classList.add('slide_out');
                 youtube_box.style.display = "";
+                clicked_playlist.classList.remove('clicked_playlist');
             }
 
         });
     }
-}
-function constructYTBox(title, artist) {
-
 }
 
 function getPlaylist(param) {
@@ -99,9 +102,8 @@ function getPlaylist(param) {
 
 function getYoutube(title, artist) {
     var yxhr = new XMLHttpRequest();
-    var key = 'AIzaSyDJG4uwhqh0A4gCLmgQuDhyJM7DK57dbDk';
-    console.log(title);
-    console.log(artist);
+    var key = "AIzaSyD0OXdeJEyRPXs6AfwNf12lkvHS_asna00";
+    // var key = 'AIzaSyDJG4uwhqh0A4gCLmgQuDhyJM7DK57dbDk';
     var video_id
     var url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + artist + ',' + title + '&key=' + key;
     yxhr.open('GET', url, false);
