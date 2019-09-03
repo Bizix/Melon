@@ -353,7 +353,7 @@ input:checked+label:after {
 }
 
 label:active:after {
-    width: 130px;
+    width: 37px;
 }
 
 
