@@ -89,7 +89,7 @@ function construct_playlist(xhr) {
 
 function getPlaylist(param) {
     var xhr = new XMLHttpRequest();
-    var url = 'http://www.melon.com/chart/day/index.htm?classCd=' + param;
+    var url = 'http://cors-anywhere.herokuapp.com/http://www.melon.com/chart/day/index.htm?classCd=' + param;
     xhr.open('GET', url, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {

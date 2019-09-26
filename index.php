@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
-    <title>Melon4Foreigners</title>
+    <title>Watermelon</title>
 </head>
 
 <body>
@@ -32,8 +32,8 @@
                 <div id="trot" class="genre dark" data-filter="GN0700">Trot</div>
                 <div id="folk" class="genre dark" data-filter="GN0800">Blues/Folk</div>
             </div>
-            <div class="toggle"><input type="checkbox" id="switch" name="switch" autocomplete="off" /><label
-                    for="switch">Toggle</label></div>
+            <!-- <div class="toggle"><input type="checkbox" id="switch" name="switch" autocomplete="off" /><label
+                    for="switch">Toggle</label></div> -->
         </header>
         <section>
             <div class="playlist_header">
